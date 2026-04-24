@@ -1,44 +1,45 @@
-#  Nigehbaan ML Model (LSTM+CNN)
+# 📱 Nigehbaan ML Model (LSTM+CNN)
 
 ##  Overview
 
-This repository contains the machine learning model used in the Nigehbaan mobile safety application. The model is based on Long Short-Term Memory (LSTM) networks and is designed to detect crash events and abnormal activities using smartphone sensor data such as accelerometer readings.
+This repository contains the complete machine learning pipeline used in the Nigehbaan mobile safety application. It includes data cleaning, preprocessing, merging of datasets, and training of a Long Short-Term Memory (LSTM) model to detect crash events and abnormal activities using smartphone sensor data.
 
 ---
 
 ##  Features
 
+* End-to-end ML pipeline (data → preprocessing → model training)
+* Data cleaning and preprocessing of raw sensor data
+* Merging multiple datasets for improved training quality
 * LSTM-based sequence learning model
 * Detects crash and abnormal motion patterns
-* Uses time-series sensor data (accelerometer)
-* Designed for integration with Android applications
-* Supports real-time inference using TensorFlow Lite
+* Designed for real-time mobile safety applications
+* Supports TensorFlow Lite conversion for Android integration
 
 ---
 
-##  Dataset
+##  Dataset Processing
 
-* Sensor data including:
+The project includes:
 
-  * Accelerometer (X, Y, Z)
-* Data is preprocessed into sliding windows
-* Labels include:
-
-  * Normal activity
-  * Crash / abnormal activity
+* Cleaning raw sensor data (handling noise, missing values)
+* Merging multiple datasets into a unified format
+* Feature selection (accelerometer X, Y, Z)
+* Sliding window technique for time-series data
+* Label encoding for classification
 
 ---
 
-## Model Details
+##  Model Details
 
 * Model Type: LSTM (Recurrent Neural Network)
-* Input: Time-series sensor data
-* Output: Classification (Normal / Crash)
+* Input: Time-series accelerometer data
+* Output: Classification (Normal / Crash / Abnormal Activity)
 * Framework: TensorFlow / Keras
 
 ---
 
-## How to Run
+##  How to Run
 
 1. Open the notebook in Google Colab or Jupyter
 2. Install dependencies:
@@ -47,31 +48,39 @@ This repository contains the machine learning model used in the Nigehbaan mobile
 pip install tensorflow numpy pandas
 ```
 
-3. Run all cells to train the model
+3. Run all cells step-by-step:
+
+   * Data cleaning
+   * Dataset merging
+   * Preprocessing
+   * Model training
 
 ---
 
-## Output
+##  Output
 
 * Trained model exported as `.tflite` for Android integration
+* Processed dataset ready for training
 * Normalization constants saved in JSON
 
 ---
 
 ##  Integration
 
-The trained model is used in the Nigehbaan Android app for real-time safety monitoring and emergency detection.
+The trained model is integrated into the Nigehbaan Android application for real-time crash detection and safety monitoring using smartphone sensors.
 
 ---
 
 ##  Future Improvements
 
 * Add more activity classes (theft, fall, drowning)
-* Improve dataset diversity
-* Optimize model for edge devices
+* Improve dataset diversity and balance
+* Apply model optimization (quantization/pruning)
+* Real-time streaming data pipeline
 
 ---
 
 ##  Author
 
 Hasan Abbas
+
